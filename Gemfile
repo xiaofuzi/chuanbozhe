@@ -57,3 +57,6 @@ end
 group :production do
 	gem 'pg', '0.15.1'
 end
+
+gem 'rb-readline', '~> 0.4.2'
+gem 'bcrypt-ruby', '3.0.1'
