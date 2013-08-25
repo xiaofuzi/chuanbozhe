@@ -1,5 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
+  	@articles = all_articles
   end
 
   def help

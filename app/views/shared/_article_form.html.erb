@@ -1,0 +1,14 @@
+<%= form_for(@article) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+  
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+	<%= f.label :website %>
+	<%= f.text_field :website %>
+
+	<div class="field">
+		<%= f.text_area :content,placehold: "文章概要..." %>
+	</div>
+	<%= f.submit "发布", class: "btn btn-large btn-primary" %>
+<% end %>

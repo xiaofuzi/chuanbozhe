@@ -1,6 +1,10 @@
 <% provide(:title, "首页") %>
-<div class="center hero-unit">
-    <h1>StaticPages#home</h1>
-    <p>Find me in app/views/static_pages/home.html.erb</p>
-    <%= link_to "Sign up now!", signup_path, class: "bit btn-large btn-primary" %>
+<div class="container">
+    <% if @articles %>
+		  <ol class="articles">
+		  	<%= render @articles %>
+		  </ol>
+		  
+		<% end %>
+   <%= will_paginate @articles %>
 </div>
