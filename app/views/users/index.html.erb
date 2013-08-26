@@ -1,18 +1,29 @@
 <% provide(:title, 'All users') %>
-<h1>All users</h1>
+<h2>参与本站的用户朋友们！</h1>
 
 <%= will_paginate %>
-
-<ul class="users">
+<div class="row ">
+<div class="span12 ">
+<ul class="users inline">
   <% @users.each do |user| %>
    <li>
-   	<%= gravatar_for user, size:52 %>
-   	<%= link_to user.name, user %>
+   	<%= gravatar_for user, size:120 %>
+   	<div class="text-center">
+   	    <h4 ><%= link_to user.name, user %></h3>
+   	    <h6> Posted <%= user.articles.count %>
+	                <% if user.articles.count == 1 %>
+	                     article
+	                <% else %>
+	                     articles
+	                <% end %> 
+	    </h6>
+   	</div>
    	<% if current_user.admin? && !current_user?(user) %>
    	    | <%= link_to "delete", user, method: :delete,data:{confirm:"Are you sure?"}%>
    	    <% end %>
    </li>
   <% end %>
 </ul>
-
+</div>
+</div>
 <%= will_paginate %>

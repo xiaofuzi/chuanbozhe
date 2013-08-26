@@ -1,12 +1,23 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-	<aside class="span3">
+	<aside class="span2">
 		<section>
 			<h1>
                 <%= gravatar_for @user %>
-	            <%= @user.name %>
             </h1>
-		</section>
+        </section>
+            <div >
+	            	<h5 ><%= @user.name %></h5>
+	            	<% if @user.articles.any? %>
+	                        Posted <%= @user.articles.count %>
+	                    <% if @user.articles.count == 1 %>
+	                        article
+	                    <% else %>
+	                        articles
+	                    <% end %>
+	                <% end %>
+	        </div>
+		
 	</aside>
 	<div class="span8">
 		<% if @user.articles.any? %>
