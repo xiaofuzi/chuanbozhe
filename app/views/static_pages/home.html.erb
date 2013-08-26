@@ -1,10 +1,25 @@
 <% provide(:title, "传播知识，传播文化") %>
 <div class="container">
     <% if @articles %>
+    
 		  <ol class="articles">
-		  	<%= render @articles %>
+		  	<% @articles.each do |article| %>
+		  	<li>
+		  	    <% if article.website? %>
+	               <a href="<%= article.website %>"><%= article.title %></a>
+	            <% else %>
+	                <%= link_to  article.title, '#' %>
+	            <% end %>
+	           <div class="row">
+	                <span class="timestamp">
+	  	                Posted by <%= article.user.name %>
+	  	                <%= time_ago_in_words(article.created_at) %> ago.
+	                </span>
+	            </div>
+		  	</li>
+		  	<% end %>
 		  </ol>
 		  
-		<% end %>
+	<% end %>
    <%= will_paginate @articles %>
 </div>
