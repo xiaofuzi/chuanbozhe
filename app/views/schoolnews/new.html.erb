@@ -1,0 +1,22 @@
+<% provide(:title, '发布新闻') %>
+
+<div class="row">
+  <div class=" span6 offset3">
+  	<section>
+  		<%= form_for(@schoolnew) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+  
+            <%= f.label :title %>
+            <%= f.text_field :title %>
+
+	        <%= f.label :site %>
+	        <%= f.text_field :site %>
+
+	        <div class="field">
+		        <%= f.text_area :content,placeholder: "新闻概要..." %>
+	        </div>
+	        <%= f.submit "发布", class: "btn btn-large btn-primary pull-right" %>
+        <% end %>
+  	</section>
+  </div>
+</div>

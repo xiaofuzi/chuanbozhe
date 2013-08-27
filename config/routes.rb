@@ -1,8 +1,9 @@
 WeiboApp::Application.routes.draw do
   
   resources  :users
-  resources  :sessions, only: [:new, :create, :destroy]
-  resources  :articles, only: [:new, :create, :destroy]
+  resources  :sessions,   only: [:new,  :create, :destroy]
+  resources  :articles,   only: [:new,  :create, :destroy]
+  resources  :schoolnews, only: [:index,:show,:new, :create, :destroy]
   root to:'static_pages#home'
  
   match '/help',    to: 'static_pages#help',    via: 'get' 

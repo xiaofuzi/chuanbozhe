@@ -13,5 +13,6 @@ class StaticPagesController < ApplicationController
   end
 
   def comment
+  	article = params[]
   end
 end

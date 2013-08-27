@@ -2,14 +2,28 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "chuanbozhe", root_path, id: "logo" %>
+
       <nav>
+        <ul class="nav pull-left">
+          <li ><%= link_to "Schoolnews", schoolnews_index_path %></li>
+        </ul>
         <ul class="nav pull-right">
           <li ><%= link_to "Home", root_path %></li>
-          <li ><%= link_to "Post", new_article_path %></li>
+          
          
           <% if signed_in? %>
-
             <li ><%= link_to "Users", users_path %></li>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle " data-toggle="dropdown">
+                Post <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "article", new_article_path %></li>
+                <li><%= link_to "schoolnews", new_schoolnews_path %></li>
+              </ul>
+            </li>
+
+            
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle " data-toggle="dropdown">
                 Account <b class="caret"></b>

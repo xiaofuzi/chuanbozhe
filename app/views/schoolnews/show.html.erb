@@ -1,0 +1,8 @@
+<div class="span8">
+		<% if @schoolnews.any? %>
+		  <ol class="articles">
+		  	<%= render @schoolnews %>
+		  </ol>
+		  <%= will_paginate @schoolnews %>
+		<% end %>
+	</div>
