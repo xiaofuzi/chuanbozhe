@@ -1,6 +1,6 @@
 <li>
 	<% if article.website? %>
-	  <a href="<%= article.website %>"><%= article.title %></a>
+	  <a href="<%= article.website %>" target="_blank"><%= article.title %></a>
 	<% else %>
 	  <%= link_to  article.title, '#' %>
 	<% end %>

@@ -196,3 +196,36 @@ input {
     }
   }
 }
+
+
+
+
+/* set the background-color to blue */
+.navbar-inner
+{
+    background-color: #2a5caa;
+    /* remove the gradient */
+    background-image: none;
+    /* set font color to white */
+    color: white;
+}   
+
+/* menu items */
+
+    /* set the background of the menu items to pink and default color to white */
+
+        .navbar .nav > li > a {
+          /*background-color: pink;*/   
+          color: white;
+
+        }
+
+
+    /* set hover and focus to gray */
+    .navbar .nav > li > a:focus,
+    .navbar .nav > li > a:hover {
+      background-color: gray;
+      color: white;
+    }
+      
+

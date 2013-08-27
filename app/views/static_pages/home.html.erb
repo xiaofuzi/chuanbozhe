@@ -8,7 +8,7 @@
 		  	    <% if article.website? %>
 	               <a href="<%= article.website %>"><%= article.title %></a>
 	            <% else %>
-	                <%= link_to  article.title, '#' %>
+	                <%= link_to  article.title, comment_path,:onclick=>"rankAddOne(++article.rank)" %>
 	            <% end %>
 	           <div class="row">
 	                <span class="timestamp">
