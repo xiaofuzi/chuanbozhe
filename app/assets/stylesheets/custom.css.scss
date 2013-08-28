@@ -1,3 +1,7 @@
+$linkColor:         #08c;
+$linkColorHover:    #11264f;
+/* change the default color of bootstrap*/
+
 @import "bootstrap";
 
 /*全站使用的CSS*/
@@ -51,6 +55,16 @@ p {
 	line-heoght: 1.7em;
 }
 
+/*set the link color */
+
+.message_link:visited{
+
+  color:#333;
+}
+.message_link:hover{
+  text-decoration:none;
+  color:blue;
+}
 #logo {
 	float: left;
 	margin-right: 10px;
@@ -65,8 +79,7 @@ p {
 }
 
 #logo:hover{
-	color: #fff;
-
+	color:#fff;
 }
 
 /*footer*/
@@ -229,8 +242,18 @@ input {
     }
       
 #post_user{
+  color:#412f1f;
+}
+#post_user:hover{
+  color:blue;
+}
+
+#comment a:hover{
+  text-decoration:none;
+}
+a:visited{
   color:gray;
 }
-#message_link:visited{
-  color:red;
+a:hover{
+  color:#2a5caa;
 }

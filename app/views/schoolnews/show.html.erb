@@ -1,6 +1,18 @@
-<div >
-	<h4><%= @schoolnews.title %></h4>
-	<p><%= @schoolnews.content %></p>
+<% provide(:title,@schoolnews.title) %>
+<div>
+    <h4><%= @schoolnews.title %></h4>
+    <ul class="inline">
+        <li>
+        
+            Posted by <%= link_to @schoolnews.user.name, user_path(@schoolnews.user.id),:id => "post_user", :target => '_blank' %>
+        
+        </li>
+        <% if @schoolnews.site? %>
+            <li><h6><a href="<%= @schoolnews.site %>">查看原文</a></h6></li>
+
+        <% end %>
+    </ul>
+    <p><%= @schoolnews.content %></p>
 </div>
 
 <div id="SOHUCS"></div>
