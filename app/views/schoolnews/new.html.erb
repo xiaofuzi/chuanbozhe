@@ -13,7 +13,7 @@
 	        <%= f.text_field :site %>
 
 	        <div class="field">
-		        <%= f.text_area :content,placeholder: "新闻概要..." %>
+		        <%= f.text_area :content,placeholder: "请对新闻做简要说明，可以不写。注：标题不能为空，如不填写链接将直接发布为讨论帖。" %>
 	        </div>
 	        <%= f.submit "发布", class: "btn btn-large btn-primary pull-right" %>
         <% end %>

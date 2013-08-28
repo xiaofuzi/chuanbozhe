@@ -6,13 +6,13 @@
 		  	<% @articles.each do |article| %>
 		  	<li>
 		  	    <% if article.website? %>
-	               <a href="<%= article.website %>"><%= article.title %></a>
+	               <a href="<%= article.website %> id="message_link" " target="_blank"><%= article.title %></a>
 	            <% else %>
-	                <%= link_to  article.title, comment_path,:onclick=>"rankAddOne(++article.rank)" %>
+	                <%= link_to  article.title, article_path(article.id),:target => '_blank' %>
 	            <% end %>
 	           <div class="row">
 	                <span class="timestamp">
-	  	                Posted by <%= article.user.name %>
+	  	                Posted by <%= link_to article.user.name, user_path(article.user.id),:id => "post_user", :target => '_blank' %>
 	  	                <%= time_ago_in_words(article.created_at) %> ago.
 	                </span>
 	            </div>

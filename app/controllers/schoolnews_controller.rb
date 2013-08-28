@@ -8,8 +8,7 @@ class SchoolnewsController < ApplicationController
     end
 
     def show
-  	    @schoolnewses = []
-        @schoolnewses = Schoolnews.all
+  	    @schoolnews = Schoolnews.find(params[:id])
         
     end
 

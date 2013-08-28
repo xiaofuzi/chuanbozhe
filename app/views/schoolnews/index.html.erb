@@ -6,13 +6,13 @@
 		  	<% @schoolnews.each do |news| %>
 		  	<li>
 		  	    <% if news.site? %>
-	               <a href="<%= news.site %>"><%= news.title %></a>
+	               <a href="<%= news.site %>" target="_blank"><%= news.title %></a>
 	            <% else %>
-	                <%= link_to  news.title, '#' %>
+	                <%= link_to  news.title, schoolnews_path(news.id) ,:target => '_blank'%>
 	            <% end %>
 	           <div class="row">
 	                <span class="timestamp">
-	  	                Posted 
+	  	                Posted by <%= link_to news.user.name, user_path(news.user.id),:id => "post_user", :target => '_blank' %> 
 	  	                <%= time_ago_in_words(news.created_at) %> ago.
 	                </span>
 	            </div>
