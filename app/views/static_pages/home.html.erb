@@ -10,6 +10,7 @@
 	            <% else %>
 	                <%= link_to  article.title, article_path(article.id), :target => '_blank' %>
 	            <% end %>
+	            
 	            <p class="btn btn-mini pull-right" id="comment"><%= link_to  "添加评论", article_path(article.id),:target => '_blank' %></p>
 	           <div class="row">
 	                <span class="timestamp">
