@@ -1,15 +1,15 @@
 <li>
-	<% if schoolnews.website? %>
-	  <a href="<%= schoolnews.website %>" target="_blank"><%= schoolnews.title %></a>
+	<% if schoolnews.site? %>
+	  <a href="<%= schoolnews.site %>" target="_blank"><%= schoolnews.title %></a>
 	<% else %>
 	  <%= link_to  schoolnews.title, '#' %>
 	<% end %>
 	<div class="row">
 	    <span class="timestamp">
-	  	    Posted <%= time_ago_in_words(article.created_at) %> ago.
+	  	    Posted <%= time_ago_in_words(schoolnews.created_at) %> ago.
 	    </span>
     
-	<% if current_user?(article.user) %>
+	<% if current_user?(schoolnews.user) %>
 	    <%= link_to "delete", schoolnews, method: :delete,
 	                                   data: {confirm: "You sure?"},
 	                                   title: schoolnews.title %>

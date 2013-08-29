@@ -1,5 +1,5 @@
 <% provide(:title, @user.name) %>
-<div class="row">
+<div class="container-fluid">
 	<aside class="span2">
 		<section>
 			<h1>
@@ -16,15 +16,31 @@
 	                        articles
 	                    <% end %>
 	                <% end %>
+	                <% if @user.schoolnews.any? %>
+	                        Posted <%= @user.schoolnews.count %>
+	                        schoolnews
+	                <% end %>
 	        </div>
 		
 	</aside>
 	<div class="span8">
+	<div >
 		<% if @user.articles.any? %>
+		<h4>总共发表了<%= @articles.count %>篇文章</h4>
 		  <ol class="articles">
 		  	<%= render @articles %>
 		  </ol>
 		  <%= will_paginate @articles %>
 		<% end %>
 	</div>
+	<div  >
+		<% if @user.schoolnews.any? %>
+		<h4>总共发表了<%= @schoolnews.count %>篇新闻</h4>
+		  <ol class="articles">
+		  	<%= render @schoolnews %>
+		  </ol>
+		  <%= will_paginate @schoolnews %>
+		<% end %>
+	</div>
+    </div>
 </div>

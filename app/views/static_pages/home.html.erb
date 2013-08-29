@@ -1,27 +1,30 @@
 <% provide(:title, "传播知识，传播文化") %>
 <div class="container">
+	<div class="span8">
     <% if @articles %>
         <h4>Those articles are worthing to reading!</h4>
 		  <ol class="articles">
 		  	<% @articles.each do |article| %>
 		  	<li>
+		  		
 		  	    <% if (article.website? && !article.content?) %>
 	               <a href="<%= article.website %>"   target="_blank"><%= article.title %></a>
 	            <% else %>
 	                <%= link_to  article.title, article_path(article.id), :target => '_blank' %>
 	            <% end %>
-	            
-	            <p class="btn btn-mini pull-right" id="comment"><%= link_to  "添加评论", article_path(article.id),:target => '_blank' %></p>
-	           <div class="row">
+	           	    <div >
 	                <span class="timestamp">
 	  	                Posted by <%= link_to article.user.name, user_path(article.user.id),:id => "post_user", :target => '_blank' %>
-	  	                <%= time_ago_in_words(article.created_at) %> ago.
+	  	                <%= time_ago_in_words(article.created_at) %> ago|
 	                </span>
-	            </div>
-		  	</li>
+	                <en class="btn-link" ><%= link_to  "disquss", article_path(article.id),:id => "post_user",:target => '_blank' %></en>
+	                </div>
+	            
+	        </li>    
 		  	<% end %>
 		  </ol>
 		  
 	<% end %>
    <%= will_paginate @articles %>
+   </div>
 </div>
