@@ -2,7 +2,7 @@
 	<% if article.website? %>
 	  <a href="<%= article.website %>" target="_blank"><%= article.title %></a>
 	<% else %>
-	  <%= link_to  article.title, '#' %>
+	  <%= link_to  article.title, article_path(article.id) %>
 	<% end %>
 	<div >
 	    <span class="timestamp">

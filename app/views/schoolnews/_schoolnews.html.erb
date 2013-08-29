@@ -2,9 +2,9 @@
 	<% if schoolnews.site? %>
 	  <a href="<%= schoolnews.site %>" target="_blank"><%= schoolnews.title %></a>
 	<% else %>
-	  <%= link_to  schoolnews.title, '#' %>
+	  <%= link_to  schoolnews.title, schoolnews_path(schoolnews.id) %>
 	<% end %>
-	<div class="row">
+	<div >
 	    <span class="timestamp">
 	  	    Posted <%= time_ago_in_words(schoolnews.created_at) %> ago.
 	    </span>
