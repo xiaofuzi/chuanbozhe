@@ -9,21 +9,4 @@ class Article < ActiveRecord::Base
 	default_scope -> { order('created_at DESC') }
 	after_initialize :init 
 
-
-
-    def self.fetch_title
-    	scraper = Scraper.define do 
-    		process "title", :title=>:text
-    		result :title 
-        end
-        if :content==nil
-               uri = URI.parse(:website)
-               update_attribute :content,scrape(uri)
-           
-        end
-    end
-	private
-	   def init
-	   	self.score = 50
-	   end
 end
