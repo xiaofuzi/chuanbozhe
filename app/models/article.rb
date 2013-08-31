@@ -7,6 +7,6 @@ class Article < ActiveRecord::Base
     validates :website, :format => URI::regexp(%w(http https))
 
 	default_scope -> { order('created_at DESC') }
-	after_initialize :init 
+	 
 
 end
