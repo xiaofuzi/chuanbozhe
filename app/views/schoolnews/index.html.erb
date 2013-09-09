@@ -2,10 +2,12 @@
 <div class="container">
 	<div class="span8">
     <% if @schoolnews %>
-     <h4>Those news are  for the students of WuHan University</h4>
+    <div class="bigbox">
+     <h4>武汉大学印刷与包装系相关新闻资讯</h4>
 		  <ol class="articles">
 		  	<% @schoolnews.each do |news| %>
 		  	<li>
+		  		<div >
 		  	    <% if news.site? %>
 	               <a href="<%= news.site %>" target="_blank"><%= news.title %></a>
 	            <% else %>
@@ -19,11 +21,13 @@
 	                </span>
 	                <en class="btn-link" ><%= link_to  "disquss", schoolnews_path(news.id),:id => "post_user",:target => '_blank' %></en>
 	            </div>
+	            </div>
 		  	</li>
 		  	<% end %>
 		  </ol>
 		  
 	<% end %>
    <%= will_paginate @schoolnews %>
+</div>
 </div>
 </div>

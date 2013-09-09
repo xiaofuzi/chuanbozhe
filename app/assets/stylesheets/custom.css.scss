@@ -11,6 +11,7 @@ html{
 
 body {
 	padding-top: 60px;
+  background-color:rgb(238, 238, 238);
 }
 
 section {
@@ -79,7 +80,8 @@ p {
 }
 
 #logo:hover{
-	color:#fff;
+	color:gray;
+  text-decoration:none;
 }
 
 /*footer*/
@@ -89,7 +91,7 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: #999;
+  color: gray;
 }
 
 footer a {
@@ -216,7 +218,7 @@ input {
 /* set the background-color to blue */
 .navbar-inner
 {
-    background-color: #2a5caa;
+    background-color: black;
     /* remove the gradient */
     background-image: none;
     /* set font color to white */
@@ -258,3 +260,24 @@ a:hover{
   color:#2a5caa;
 }
 
+
+.box{
+  background-color: rgb(255, 255, 255);
+  padding: 10px;
+  border-style:solid;
+  border-color:white;
+  border-bottom-color: #d3c6a6;
+  border-width:1px;
+}
+.bigbox{
+  background-color: rgb(255, 255, 255);
+  border-radius: 6px 6px 6px 6px;
+  padding: 10px;
+  
+}
+.like {
+  color:gray;
+}
+.like a:hover{
+  color:blue;
+}

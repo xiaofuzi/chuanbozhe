@@ -4,8 +4,11 @@ WeiboApp::Application.routes.draw do
   resources  :sessions,   only: [:new,  :create, :destroy]
   resources  :articles,   only: [:show, :new,  :create, :destroy]
   resources  :schoolnews, only: [:index,:show,:new, :create, :destroy]
-  root to:'static_pages#home'
+  resources :relationships, only: [:create, :destroy]
+  
+  root to:'static_pages#chuanbozhe'
  
+  match '/home',    to: 'static_pages#home',    via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get' 
   match '/about',   to: 'static_pages#about',   via: 'get' 
   match '/contact', to: 'static_pages#contact', via: 'get' 
@@ -14,7 +17,7 @@ WeiboApp::Application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  get '/chuanbozhe' => 'static_pages#chuanbozhe'
+  
   resources :articles do 
     member do 
       get :score

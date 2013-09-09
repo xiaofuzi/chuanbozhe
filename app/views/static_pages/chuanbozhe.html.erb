@@ -1,14 +1,18 @@
-<div class="banner">
-    <ul>
-        <li style="background-image:url('http://imgcdn.ph.126.net/cXzQdDZ3gHLUmXZUYD4xgg==/6597830628703461342.jpg')">This is a slide.</li>
-        <li>This is another slide.</li>
-        <li>This is a final slide.</li>
-    </ul>
+<% provide(:title, "传播知识，传播文化") %>
+<body style="background-image:url('http://www.bz55.com/uploads1/allimg/120205/1_120205104516_1.jpg') ">
+<div style="color:#005344 " class="text-center vertically-centered" >
+    <div><h1>欢迎来到传播者</h1></div>
+    <h1>在这里，你可以做什么？</h2>
+    <strong>
+    	
+    		<h4>发现最新的印刷资讯</h4>
+    		<h4>浏览相关科技文章</h4>
+    		<h4>发布文章，参与讨论</h4>
+    		<h4>了解最近的校内新闻</h4>
+    	<%= link_to "现在注册", signup_path, class:"btn btn-success" %>
+    	<%= link_to "浏览阅读", signup_path, class:"btn btn-success" %>
+    	
+    </strong>
 </div>
-<script src="//code.jquery.com/jquery-latest.min.js"></script>
-<script src="//unslider.com/unslider.js"></script>
-<script>
-$(function() {
-    $('.banner').unslider();
-});
-</script>
+
+</body>

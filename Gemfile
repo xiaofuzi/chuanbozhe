@@ -69,7 +69,3 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 
 gem 'scrapi'
-
-#upload company
-gem 'paperclip'
-gem 'aws-sdk'

@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :articles,   dependent: :destroy
   has_many :schoolnews, dependent: :destroy
+  has_many :relationships, foreign_key: "user_id", dependent: :destroy
+  has_many :up_articles, through: :relationships, source: :article
+
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
@@ -24,6 +27,15 @@ class User < ActiveRecord::Base
 
   def User.encrypt(token)
     Digest::SHA1.hexdigest(token.to_s)
+  end
+
+  
+  def uped?(article)
+    Relationship.find_by(article_id:article.id)
+  end
+
+  def up!(article)
+    relationships.create!(article_id:article.id)
   end
 
   private

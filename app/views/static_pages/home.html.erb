@@ -1,27 +1,44 @@
-<% provide(:title, "传播知识，传播文化") %>
+<% provide(:title, "为你推荐的最新文章") %>
 <div class="container">
-	<div class="span8">
+	<div class="span8 bigbox">
     <% if @articles %>
-        <h4>Those articles are worthing to reading!</h4>
-		  <ol class="articles">
+        <h4>畅游在知识的海洋</h4>
+        
+		  <ol class="articles ">
+		  	
 		  	<% @articles.each do |article| %>
-		  	<li>
+		  	<li >
 		  		
+		  		
+		  		<div >
 		  	    <% if (article.website? && !article.content?) %>
 	               <a href="<%= article.website %>"   target="_blank"><%= article.title %></a>
 	            <% else %>
 	                <%= link_to  article.title, article_path(article.id), :target => '_blank' %>
 	            <% end %>
-	           	    <div >
+               
+                <div>
+                
 	                <span class="timestamp">
 	  	                Posted by <%= link_to article.user.name, user_path(article.user.id),:id => "post_user", :target => '_blank' %>
 	  	                <%= time_ago_in_words(article.created_at) %> ago|
 	                </span>
 	                <en class="btn-link" ><%= link_to  "disquss", article_path(article.id),:id => "post_user",:target => '_blank' %></en>
-	                </div>
-	            
+	            <% if signed_in? %>
+	            <div style=" height:20px; float:right; display:inline; pull-left;">
+	            <%= form_for(current_user.relationships.build(article_id:article.id),{:class => "form-inline"} ) do |f| %>
+                    <%= f.hidden_field :article_id %>
+                    <en ><%= f.submit "喜欢", class: "btn btn-link like" %></en>
+                    <% end %>
+                </div>
+                <% end %>
+
+            </div>
+            </div>
 	        </li>    
 		  	<% end %>
+
+		  
 		  </ol>
 		  
 	<% end %>
