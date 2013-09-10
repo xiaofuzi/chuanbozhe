@@ -48,4 +48,5 @@ module SessionsHelper
         @all_articles = []
         @all_articles = Article.paginate(page: params[:page], per_page: 15)
     end
+    
 end

@@ -26,8 +26,5 @@ class StaticPagesController < ApplicationController
   def contact
   end
   def chuanbozhe
-    if signed_in?
-      redirect_to home_path
-    end
   end
 end
