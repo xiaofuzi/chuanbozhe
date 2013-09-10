@@ -6,7 +6,7 @@ WeiboApp::Application.routes.draw do
   resources  :schoolnews, only: [:index,:show,:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
   
-  root to:'static_pages#chuanbozhe'
+  root to:'static_pages#welcome'
  
   match '/chuanbozhe',    to: 'static_pages#chuanbozhe',    via: 'get'
   match '/home',    to: 'static_pages#home',    via: 'get'

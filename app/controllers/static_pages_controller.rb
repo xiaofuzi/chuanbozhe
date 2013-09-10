@@ -26,5 +26,12 @@ class StaticPagesController < ApplicationController
   def contact
   end
   def chuanbozhe
+   
+  end
+
+  def welcome
+    if signed_in?
+      redirect_to home_path
+    end
   end
 end
